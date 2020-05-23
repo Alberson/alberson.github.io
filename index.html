@@ -98,40 +98,19 @@
       <form id="form" target="_self" onsubmit="return postToGoogle();" action="" autocomplete="off">
         <div class="form-group">
           <label for="inputName">Name</label>
-          <input type="text" class="form-control" id="inputName" name="entry.2005620554" placeholder="John Doe">
+          <input type="text" class="form-control" id="inputName" name="entry.2005620554">
         </div>
         <div class="form-group">
           <label for="inputAddress">Address</label>
-          <input type="text" class="form-control" id="inputAddress" name="entry.1065046570" placeholder="1234 Main St">
+          <input type="text" class="form-control" id="inputAddress" name="entry.1065046570" placeholder="1000 Main St, Apartment #1234">
         </div>
         <div class="form-group">
-          <label for="inputAddress2">Address 2</label>
-          <input type="text" class="form-control" id="inputAddress2" name="entry.414965090" placeholder="Apartment, studio, or floor">
+          <label for="inputAddress2">City, State, & Zip</label>
+          <input type="text" class="form-control" id="inputAddress2" name="entry.414965090" placeholder="Arlington, VA 22202">
         </div>
         <div class="form-group">
-          <label for="inputCity">City</label>
-          <input type="text" class="form-control" name="entry.34477367" id="inputCity">
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputState">State</label>
-            <input type="text" class="form-control" name="entry.1788772328" id="inputState" placeholder="">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" name="entry.278584730" id="inputZip">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputZip">Phone</label>
-            <input type="text" class="form-control" name="entry.1166974658" id="inputPhone">
-          </div
-          ><div class="form-group col-md-6">
-            <label for="inputEmail">Email</label>
-            <input type="email" class="form-control" name="entry.1045781291" id="inputEmail">
-          </div>
- 
+          <label for="inputEmail">Email</label>
+          <input type="email" class="form-control" name="entry.1045781291" id="inputEmail">
         </div>
         <button type="submit" id="send" class="btn btn-primary" style="background-color: #235347; color: floralwhite;; border-color: #8EB69B;">Submit</button>
       </form>
@@ -154,10 +133,10 @@
     <div class="col-md-6">
       <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">World</strong>
-          <h3 class="mb-0">Featured post</h3>
-          <div class="mb-1 text-muted">Nov 12</div>
-          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <strong class="d-inline-block mb-2 text-primary">Wedding</strong>
+          <h3 class="mb-0">Bryce Canyon National Park</h3>
+          <div class="mb-1 text-muted">May 15, 2020</div>
+          <p class="card-text mb-auto">Danny and Andrea were married with family present in person and over Zoom. The wedding was performed by Andrea's father, Bishop Eyestone.</p>
           <a href="#" class="stretched-link">Continue reading</a>
         </div>
         <div class="col-auto d-none d-lg-block">
@@ -168,9 +147,9 @@
     <div class="col-md-6">
       <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-success">Design</strong>
-          <h3 class="mb-0">Post title</h3>
-          <div class="mb-1 text-muted">Nov 11</div>
+          <strong class="d-inline-block mb-2 text-success">Sealing</strong>
+          <h3 class="mb-0">Provo City Center</h3>
+          <div class="mb-1 text-muted">Fall 2020</div>
           <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
           <a href="#" class="stretched-link">Continue reading</a>
         </div>
@@ -203,11 +182,7 @@
                   var field1 = $("#inputName").val();
                   var field2 = $("#inputAddress").val();
                   var field3 = $("#inputAddress2").val();
-                  var field4 = $("#inputCity").val();
-                  var field5 = $("#inputState").val();
-                  var field6 = $("#inputZip").val();
-                  var field7 = $("#inputPhone").val();
-                  var field8 = $("#inputEmail").val();
+                  var field4 = $("#inputEmail").val();
 
                   if(field1 == ""){
 					alert('Please Fill Your Name');
@@ -217,7 +192,7 @@
     
                   $.ajax({
                       url: "https://docs.google.com/forms/d/e/1FAIpQLSeai2G_KY0HIDgZOwz6zMwCkkPC4rlsSnQGnP_LZt65PH4LgQ/formResponse?",
-            data: {"entry.2005620554": field1, "entry.1065046570": field2, "entry.414965090": field3, "entry.34477367": field4, "entry.1788772328": field5, "entry.278584730": field6, "entry.1166974658": field7, "entry.1045781291": field8},
+            data: {"entry.2005620554": field1, "entry.1065046570": field2, "entry.414965090": field3, "entry.1045781291": field4},
                       type: "POST",
                       dataType: "xml",
                       success: function(d)
